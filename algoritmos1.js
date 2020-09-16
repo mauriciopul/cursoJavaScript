@@ -31,4 +31,35 @@ console.log(ejercicio1(80, 3));
 
 
 
+/*
+2. Leer tres números y decir cuál de ellos es el que tiene el valor intermedio.
+*/
+
+
+function mayQ(n1, n2) {
+    return n1 > n2 ? true : false;
+}
+
+function menQ(n1, n2) {
+    return n1 < n2 ? true : false;
+}
+
+function leer3Numeros(n1, n2, n3) {
+    let medio;
+    let igual = n1 === n2 || n1 === n3 || n2 === n3;
+
+    if (igual)
+        return 'Hay 2 números repetidos';
+
+    if ((menQ(n1, n2) && mayQ(n1, n3)) || (mayQ(n1, n2) && menQ(n1, n3)))
+        return n1;
+
+    if ((menQ(n2, n1) && mayQ(n2, n3)) || (mayQ(n2, n1) && menQ(n2, n3)))
+        return n2
+
+    if ((menQ(n3, n1) && mayQ(n3, n2)) || (mayQ(n3, n1) && menQ(n3, n2)))
+        return n3;
+};
+
+console.log(leer3Numeros(8, 9, 6));
 
