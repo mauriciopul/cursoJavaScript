@@ -29,12 +29,9 @@ function ejercicio1(asistencia, nota) {
 }
 console.log(ejercicio1(80, 3));
 
-
-
 /*
 2. Leer tres números y decir cuál de ellos es el que tiene el valor intermedio.
 */
-
 
 function mayQ(n1, n2) {
     return n1 > n2 ? true : false;
@@ -60,13 +57,13 @@ function ejercicio2(n1, n2, n3) {
     if ((menQ(n3, n1) && mayQ(n3, n2)) || (mayQ(n3, n1) && menQ(n3, n2)))
         return n3;
 };
-
 console.log(ejercicio2(8, 9, 6));
 
 /*
 3. Leer tres números y decir cuál es el de valor mayor, el de valor intermedio, y el de 
     valor menor.
 */
+
 function ejercicio3(n1, n2, n3) {
     let numMenor, numIntermedio, numMayor;
     if (menQ(n1, n2) && menQ(n1, n3)) { numMenor = n1 };
@@ -83,9 +80,7 @@ function ejercicio3(n1, n2, n3) {
     Menor: ${numMenor}
     Intermedio: ${numIntermedio}`;
 }
-
 console.log(ejercicio3(8, 9, 6));
-
 
 /*
 4. Leer un número entre el 1 y el 10 e imprimir su equivalente en números romanos
@@ -108,7 +103,14 @@ function ejercicio4(num) {
 }
 console.log(ejercicio4(0));
 
+/*
+5. Leer tres calificaciones de un alumno y determinar su promedio
+*/
 
+function ejerciio5(n1, n2, n3) {
+    return ((n1 + n2 + n3) / 3).toFixed(2);
+}
+console.log(ejerciio5(2, 3, 2));
 
 
 
