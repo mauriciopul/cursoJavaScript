@@ -44,7 +44,7 @@ function menQ(n1, n2) {
     return n1 < n2 ? true : false;
 }
 
-function leer3Numeros(n1, n2, n3) {
+function ejercicio2(n1, n2, n3) {
     let medio;
     let igual = n1 === n2 || n1 === n3 || n2 === n3;
 
@@ -61,5 +61,37 @@ function leer3Numeros(n1, n2, n3) {
         return n3;
 };
 
-console.log(leer3Numeros(8, 9, 6));
+console.log(ejercicio2(8, 9, 6));
+
+/*
+3. Leer tres números y decir cuál es el de valor mayor, el de valor intermedio, y el de 
+    valor menor.
+*/
+function ejercicio3(n1, n2, n3) {
+    let numMenor, numIntermedio, numMayor;
+    if (menQ(n1, n2) && menQ(n1, n3)) { numMenor = n1 };
+    if (menQ(n2, n1) && menQ(n2, n3)) { numMenor = n2 };
+    if (menQ(n3, n1) && menQ(n3, n2)) { numMenor = n3 };
+
+    if (mayQ(n2, n1) && mayQ(n2, n3)) { numMayor = n2 };
+    if (mayQ(n1, n2) && mayQ(n1, n3)) { numMayor = n1 };
+    if (mayQ(n3, n1) && mayQ(n3, n2)) { numMayor = n3 };
+
+    numIntermedio = ejercicio2(n1, n2, n3);
+    return `
+    Mayor: ${numMayor}
+    Menor: ${numMenor}
+    Intermedio: ${numIntermedio}`;
+}
+
+console.log(ejercicio3(8, 9, 6));
+
+
+
+
+
+
+
+
+
 
