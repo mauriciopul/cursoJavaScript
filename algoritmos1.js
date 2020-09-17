@@ -107,10 +107,25 @@ console.log(ejercicio4(0));
 5. Leer tres calificaciones de un alumno y determinar su promedio
 */
 
-function ejerciio5(n1, n2, n3) {
+function ejercicio5(n1, n2, n3) {
     return ((n1 + n2 + n3) / 3).toFixed(2);
 }
-console.log(ejerciio5(2, 3, 2));
+console.log(ejercicio5(2, 3, 2));
+
+/*
+6. En un almacén se hace un 20% de descuento a los clientes cuya compra supere los $1,000 
+    ¿cuál será la cantidad que pagará una persona por su compra?
+*/
+function veintePorciento(num) {
+    return ((num * 20) / 100);
+}
+
+function ejercicio6(vlr) {
+    return vlr > 1000 ? 1000 - veintePorciento(vlr) : 1000;
+}
+//console.log(`valor a pagar: ${ejercicio6(1000)}`);
+console.log(`valor a pagar: $${ejercicio6(1001)}`);
+
 
 
 
