@@ -22,71 +22,70 @@
     tenga el 80% de sus asistencias, en caso de tener menos del 80% de asistencias se 
     mostrará reprobado aún cuando su calificación sea aprobatoria.
 */
-function ejercicio1(asistencia, nota) {
-    let msn1 = '';
-    return asistencia < 80 ? 'Reprobado' : nota < 3 ? 'Reprobado' : 'Aprobado';
-    //return msn1;
+function isApproved(asistencia, nota) {
+    return asistencia < 80 ? false : nota < 3 ? false : true;
 }
-console.log(ejercicio1(80, 3));
+console.log(isApproved(79, 3)?'Aprobado':'Reprobado');
 
 /*
 2. Leer tres números y decir cuál de ellos es el que tiene el valor intermedio.
 */
 
-function mayQ(n1, n2) {
+function isHigher(n1, n2) {
     return n1 > n2 ? true : false;
 }
 
-function menQ(n1, n2) {
+function isLess(n1, n2) {
     return n1 < n2 ? true : false;
 }
 
-function ejercicio2(n1, n2, n3) {
-    let medio;
+function isMidleNumber(n1, n2, n3) {
+
     let igual = n1 === n2 || n1 === n3 || n2 === n3;
 
     if (igual)
         return 'Hay 2 números repetidos';
 
-    if ((menQ(n1, n2) && mayQ(n1, n3)) || (mayQ(n1, n2) && menQ(n1, n3)))
+    if ((isLess(n1, n2) && isHigher(n1, n3)) || (isHigher(n1, n2) && isLess(n1, n3)))
         return n1;
 
-    if ((menQ(n2, n1) && mayQ(n2, n3)) || (mayQ(n2, n1) && menQ(n2, n3)))
+    if ((isLess(n2, n1) && isHigher(n2, n3)) || (isHigher(n2, n1) && isLess(n2, n3)))
         return n2
 
-    if ((menQ(n3, n1) && mayQ(n3, n2)) || (mayQ(n3, n1) && menQ(n3, n2)))
+    if ((isLess(n3, n1) && isHigher(n3, n2)) || (isHigher(n3, n1) && isLess(n3, n2)))
         return n3;
 };
-console.log(ejercicio2(8, 9, 6));
+console.log(isMidleNumber(8, 9, 6));
 
 /*
 3. Leer tres números y decir cuál es el de valor mayor, el de valor intermedio, y el de 
     valor menor.
 */
 
-function ejercicio3(n1, n2, n3) {
+function numberPositions(n1, n2, n3) {
     let numMenor, numIntermedio, numMayor;
-    if (menQ(n1, n2) && menQ(n1, n3)) { numMenor = n1 };
-    if (menQ(n2, n1) && menQ(n2, n3)) { numMenor = n2 };
-    if (menQ(n3, n1) && menQ(n3, n2)) { numMenor = n3 };
+    if (isLess(n1, n2) && isLess(n1, n3)) { numMenor = n1 };
+    if (isLess(n2, n1) && isLess(n2, n3)) { numMenor = n2 };
+    if (isLess(n3, n1) && isLess(n3, n2)) { numMenor = n3 };
 
-    if (mayQ(n2, n1) && mayQ(n2, n3)) { numMayor = n2 };
-    if (mayQ(n1, n2) && mayQ(n1, n3)) { numMayor = n1 };
-    if (mayQ(n3, n1) && mayQ(n3, n2)) { numMayor = n3 };
+    if (isHigher(n2, n1) && isHigher(n2, n3)) { numMayor = n2 };
+    if (isHigher(n1, n2) && isHigher(n1, n3)) { numMayor = n1 };
+    if (isHigher(n3, n1) && isHigher(n3, n2)) { numMayor = n3 };
 
-    numIntermedio = ejercicio2(n1, n2, n3);
-    return `
-    Mayor: ${numMayor}
-    Menor: ${numMenor}
-    Intermedio: ${numIntermedio}`;
+    numIntermedio = isMidleNumber(n1, n2, n3);
+    return {
+        menor: numMenor,
+        intermedio: numIntermedio,
+        mayor: numMayor
+    };
 }
-console.log(ejercicio3(8, 9, 6));
+console.log(numberPositions(8, 9, 6));
 
 /*
 4. Leer un número entre el 1 y el 10 e imprimir su equivalente en números romanos
 */
 
-function ejercicio4(num) {
+function romansNumber(num) {
     switch (num) {
         case 1: return `El número ${num} equivale al 'I'`;
         case 2: return `El número ${num} equivale al 'II'`;
@@ -101,30 +100,27 @@ function ejercicio4(num) {
         default: return `El número ${num} no es un número válido`;
     }
 }
-console.log(ejercicio4(0));
+console.log(romansNumber(0));
 
 /*
 5. Leer tres calificaciones de un alumno y determinar su promedio
 */
 
-function ejercicio5(n1, n2, n3) {
-    return ((n1 + n2 + n3) / 3).toFixed(2);
+function average(...numbers) {
+    //return ((n1 + n2 + n3) / arguments.length).toFixed(2);
+    return ((numbers.reduce((ant,act)=>ant+act)) / numbers.length).toFixed(2);
 }
-console.log(ejercicio5(2, 3, 2));
+console.log(average(2, 3, 2));
 
 /*
 6. En un almacén se hace un 20% de descuento a los clientes cuya compra supere los $1,000 
     ¿cuál será la cantidad que pagará una persona por su compra?
 */
-function veintePorciento(num) {
-    return ((num * 20) / 100);
+function veintePorciento(compra, desc, montoSupera ) {
+    let descu =  ((compra * desc) / 100);    
+    return compra > montoSupera ? compra - descu : compra;
 }
-
-function ejercicio6(vlr) {
-    return vlr > 1000 ? 1000 - veintePorciento(vlr) : 1000;
-}
-//console.log(`valor a pagar: ${ejercicio6(1000)}`);
-console.log(`valor a pagar: $${ejercicio6(1001)}`);
+console.log(`valor a pagar: $${veintePorciento(10022, 20, 1000)}`);
 
 
 
