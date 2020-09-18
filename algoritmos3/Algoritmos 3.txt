@@ -1,0 +1,37 @@
+1.            Realice un algoritmo que permita calcular y dar como salida el promedio general de una sección, tomando en cuenta que está compuesta por 25 estudiantes y que se tiene la nota definitiva de cada uno de ellos
+
+2.            Algoritmo que pida números hasta que se introduzca un cero. Debe imprimir la suma y la media de todos los números introducidos.
+
+3.            Realizar un algoritmo que pida números (se pedirá por teclado la cantidad de números a introducir). El programa debe informar de cuantos números introducidos son mayores que 0, menores que 0 e iguales a 0.
+
+4.            Realizar un algoritmo que muestre la tabla de multiplicar de un número introducido por teclado.
+
+5.            Dada la Identificación, Nombre, y la Nota Definitiva de 30 estudiantes, realice un algoritmo que permita calcular y dar como salida lo siguiente:
+
+a.            Cantidad de Alumnos Aprobados
+
+b.            Cantidad de Alumnos Reprobados
+
+c.            Promedio General de Notas
+
+6.            Dado un grupo de 75 Números (Diferentes a Cero), realice un algoritmo que permita determinar y dar como salida lo siguiente:
+
+a.            # Mayor y # Menor encontrado en el grupo
+
+b.            Cantidad de Números Mayores a 150
+
+c.            Cantidad de Números Negativos Encontrados
+
+d.            Promedio de los Positivos Encontrados
+
+7.            Dada La C.I., Nombre y la Nota Definitiva de 5 Materias de cada estudiante pertenecientes a un grupo de 35; realice un algoritmo que permita calcular y dar como salida el promedio de notas de cada estudiante.
+
+8.            Crea una aplicación que pida un número y calcule su factorial (El factorial de un número es el producto de todos los enteros entre 1 y el propio número y se representa por el número seguido de un signo de exclamación. Por ejemplo 5! = 1x2x3x4x5=120)
+
+9.            Crea una aplicación que permita adivinar un número. La aplicación genera un número aleatorio del 1 al 100. A continuación va pidiendo números y va respondiendo si el número a adivinar es mayor o menor que el introducido, además de los intentos que te quedan (tienes 10 intentos para acertarlo). El programa termina cuando se acierta el número (además te dice en cuantos intentos lo has acertado), si se llega al límite de intentos te muestra el número que había generado.
+
+10.          Realizar un algoritmo para determinar cuánto ahorrará una persona en un año, si al final de cada mes deposita cantidades variables de dinero; además, se quiere saber cuánto lleva ahorrado cada mes
+
+11.          Una empresa tiene el registro de las horas que trabaja diariamente un empleado durante la semana (seis días) y requiere determinar el total de éstas, así como el sueldo que recibirá por las horas trabajadas.
+
+12.          Mostrar en pantalla los N primero número primos. Se pide por teclado la cantidad de números primos que queremos mostrar.
