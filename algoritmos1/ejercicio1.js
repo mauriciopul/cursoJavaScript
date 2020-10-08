@@ -6,4 +6,4 @@
 function isApproved(asistencia, nota) {
     return asistencia < 80 ? false : nota < 3 ? false : true;
 }
-console.log(isApproved(79, 3)?'Aprobado':'Reprobado');
+console.log(isApproved(80, 3)?'Aprobado':'Reprobado');
