@@ -4,6 +4,8 @@ var numero = 12;
 var boolean = true;
 var esNull = null;
 
+var pruebaCadena = "PruebaCadena1"
+
 var persona = { nombre: 'pedro', apellido: 'perez', edad: 23 };
 var array = [ 'lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado', 'domingo' ];
 var array1 = [ 32, 45, 21,55 ];
